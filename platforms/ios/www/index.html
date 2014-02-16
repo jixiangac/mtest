@@ -27,20 +27,22 @@
         <title>Hello World</title>
     </head>
     <body onload="yxqz()">
-        <div class="app">
-            <h1>PhoneGap</h1>
+        <div id="app" class="app">
+            <h1>易享衢州</h1>
             <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
+                <p class="event listening">正在为你启动...</p>
                 <p class="event received">Device is Ready</p>
             </div>
         </div>
+        <iframe id="yxqz" src="http://shop.yxqz.cn/" frameborder="0" height="100%" width="100%" style="display:none;"></iframe>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         function yxqz(){
             setTimeout(function(){
-               window.location.href = 'http://shop.yxqz.cn/';
+                document.getElementById('yxqz').style.cssText = "";
+                document.getElementById('app').style.cssText = 'display:none;'
             },2000);
         }
         </script>
